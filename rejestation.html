@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestation</title>
+    <link rel="stylesheet" href=" style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="box boxRejestation">
+        <div class="from fromRejestation">
+            <h2> Sing Up</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="" required="required">
+                <span>fast Name</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="" required="required">
+                <span> last Name</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="" required="required">
+                <span> email</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="passwrd" type="password" required="required"   onkeyup="checkPassword(this.value)">
+                <div id="toggoleBtn" >  </div>
+                <span> password</span>
+                <i></i>
+            </div>
+            <div class="chackPassword">
+                <ul>
+                    <li id="lower">At least one lowercase Character</li>
+                    <li id="upper">At least one uppercase Character</li>
+                    <li id="number">At least one number</li>
+                    <li id="special">At least one special Character</li>
+                    <li id="lessNum">At least 8 Character</li>
+                </ul>
+
+            </div>
+            <div class="inputBox Btn">
+                <input type="submit" name="" value="Login" id="">
+
+            </div>
+            <div class="links">
+                <a href=""> Forget Password</a>
+                <a href="index.html"> Login</a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        const toggoleBtn =document.querySelector("#toggoleBtn");
+        const passwrd =document.querySelector("#passwrd")
+
+        const lowerCase =document.getElementById('lower');
+        const upperCase =document.querySelector("#upper");
+        const numberCase =document.querySelector("#number");
+        const specialChr =document.querySelector("#special");
+        const lessChr =document.querySelector("#lessNum");
+
+
+
+        function checkPassword (data){
+            const lower = new RegExp('(?=.*[a-z])');
+            const upper = new RegExp ('(?=.*[A-Z])');
+            const number = new RegExp ('(?=.*[0-9])');
+            const special = new RegExp ('(?=.*[!@#\$%\^&\*])');
+            const lessNum = new RegExp ('(?=.{8,})');
+
+            if (lower.test(data)) {
+                lowerCase.classList.add('valid');
+            }else {
+                lowerCase.classList.remove('valid')
+            }
+
+            if (upper.test(data)) {
+                upperCase.classList.add('valid');
+            }else {
+                upperCase.classList.remove('valid')
+            }
+            if (number.test(data)) {
+                numberCase.classList.add('valid');
+            }else {
+                numberCase.classList.remove('valid')
+            }
+            if (special.test(data)) {
+                specialChr.classList.add('valid');
+            }else {
+                specialChr.classList.remove('valid')
+            }
+            if (lessNum.test(data)) {
+                lessChr.classList.add('valid');
+            }else {
+                lessChr.classList.remove('valid')
+            }
+
+        }
+
+
+        // shpw chexk password Toggle btn
+
+        toggoleBtn.onclick =function  () {
+
+            if(passwrd.type === 'password' ) {
+                passwrd.setAttribute('type', ' text');
+                toggoleBtn.classList.add("hide");
+            }else {
+                passwrd.setAttribute('type', 'password');
+                toggoleBtn.classList.remove("hide");
+            }
+
+        }
+        
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

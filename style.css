@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Roboto+Slab:wght@600&family=Space+Grotesk&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+
+
+}
+body {
+    width: 100%;
+    height:100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: #23242a;
+
+}
+.box {
+    position: relative;
+
+    width: 400px;
+    height: 425px;
+    background-color: #1c1c1c;
+    overflow: hidden;
+}
+.box::before {
+    content: '';
+    width: 400px;
+    height: 460px;
+    position: absolute;
+    transform-origin: bottom right;
+    top: -50%;
+    left: -50%;
+    background-color: aqua;
+    background: linear-gradient(0deg, transparent, #00fff3, #00fff3);
+    animation: animate 6s linear infinite;
+
+}
+
+.box::after {
+    content: '';
+    width: 400px;
+    height: 460px;
+    position: absolute;
+    transform-origin: bottom right;
+    top: -50%;
+    left : -50%;
+    background-color: aqua;
+    background: linear-gradient(0deg, transparent, #00fff3, #00fff3);
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    
+    }
+
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.from {
+    position: absolute;
+    background-color: #28292d;
+    z-index: 10;
+    inset: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px;
+}
+.from h2 {
+    align-items: center;
+    text-align: center;
+    color: #00fff3;
+    font-weight: 500px;
+    letter-spacing: 0.1em;
+
+}
+.inputBox {
+    width: 250px;
+    margin-top: 32px;
+    position: relative;
+
+
+}
+.inputBox input {
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    /* box-shadow: -1px -2px 4px #3e4047; */
+    border: none;
+    outline: none;
+    z-index: 10;
+    font-weight: 550;
+    color: #292727;
+}
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 11px 9px 10px;
+    font-size: 1.2em;
+    letter-spacing: 0.09em;
+     color:#ebe2df69; 
+    font-weight: 500px;
+    pointer-events: none;
+    transition: 0.05s;
+
+
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #00fff3;
+    transform: translateY(-41px);
+    font-size: 1.2em;
+}
+.inputBox i {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background-color: #00fff3;
+    transform: 0.6s;
+    pointer-events: none;
+    border-radius: 5px;
+    z-index: -1;
+
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i {
+    /* color: #00fff3; */
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 5px;
+  
+}
+
+.Btn {
+
+    width: 60%;
+    height: 35px;
+    background-color: #20e9dfbe;
+    border: 2px solid;
+    align-items: center;
+    text-align: center;
+    border: none;
+
+    
+}
+
+.Btn input {
+    color:#07050469 ;
+  
+   
+    
+
+
+}
+.btn input {
+    align-items: center;
+    text-align: center;
+
+}
+.links {
+    margin-top: 16px;
+    width: 100%;
+    padding: 11px;
+    color: white;
+    display: flex;
+    position: relative;
+
+}
+.links a {
+    color: white;
+    padding-right: 45px;
+    padding: 7px 29px 10px 0px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+
+}
+
+
+/* REJESTATION sTART */
+.boxRejestation{
+    height: 85vh;
+
+}
+.fromRejestation {
+
+}
+
+.chackPassword {
+    display: flex;
+    margin-top: 11px;
+    width: 100%;
+    box-shadow: 0px 0px 17px #211f1f;
+
+}
+.chackPassword ul {
+    list-style-type: none;
+
+    
+
+}
+.chackPassword ul li {
+    position: relative;
+    
+    padding: 3px 0px;
+    color: white;
+    font-size: 1em;
+    font-weight: 550;
+
+}
+.inputBox #toggoleBtn {
+    position: absolute;
+    width: 39px;
+    height: 32px;
+    /* background-color: red;  */
+    top: 2px;
+    left: 83%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.7em;
+
+}
+
+
+  .inputBox #toggoleBtn::before{
+    content:'\f06e';
+    font-family: fontAwesome;
+    color: aliceblue;
+ } 
+ .inputBox #toggoleBtn.hide::before{
+    content:'\f070';
+    font-family: fontAwesome;
+    color: aliceblue;
+ } 
+ 
+.chackPassword ul li::before{
+    content: '\f111';
+    font-family: fontAwesome;
+    width: 21px;
+    height: 18px;
+    /* background-color: red; */
+    position: absolute;
+    top: 3px;
+    left: -29px;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.chackPassword ul li.valid::before {
+    content: '\f058';
+    font-family: fontAwesome;
+    color: #07ff51;
+
+
+}
+
+ .valid {
+
+
+ }
+
+
+
+
+/* reJESTATION END */
